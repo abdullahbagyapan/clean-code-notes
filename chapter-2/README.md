@@ -58,3 +58,24 @@ public List<int[]> getFlaggedCells() {
 Notice that the simplicity of the code has not changed. But the code has become much more explicit.
 
 With these simple name changes, it’s not difficult to understand what’s going on. This is the <b><i>power of choosing good names</i></b>.
+
+### Avoid Disinformation
+
+We should avoid words whose entrenched meanings vary from our intended meaning.
+
+Beware of using names which vary in small ways.
+
+>XYZControllerForEfficientHandlingOfStrings
+>XYZControllerForEfficientStorageOfStrings 
+
+The words have frightfully similar shapes.
+
+A truly awful example of disinformative names would be the use of lower-case L or uppercase O as variable names.
+
+```java
+int a = l;
+if ( O == l )
+    a = O1;
+else
+    l = 01;
+```

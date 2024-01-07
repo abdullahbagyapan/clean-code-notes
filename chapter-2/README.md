@@ -133,3 +133,27 @@ class DtaRcrd102 {
 ```
 
 If you can’t pronounce it, you can’t discuss it without sounding like an idiot.
+
+### Use Searchable Names
+
+If a variable or constant might be seen or used in multiple places in a body of code,it is imperative to give it a search-friendly name.
+
+```java
+for (int j=0; j<34; j++) {
+    s += (t[j]*4)/5;
+}
+```
+
+```java
+int realDaysPerIdealDay = 4;
+const int WORK_DAYS_PER_WEEK = 5;
+int sum = 0;
+for (int j=0; j < NUMBER_OF_TASKS; j++) {
+    int realTaskDays = taskEstimate[j] * realDaysPerIdealDay;
+    int realTaskWeeks = (realdays / WORK_DAYS_PER_WEEK);
+    sum += realTaskWeeks;
+}
+```
+
+How much easier it will be to find <b><i>WORK_DAYS_PER_WEEK</i></b> than to find all the places where <b><i>5</i></b> was used.
+

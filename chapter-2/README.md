@@ -157,3 +157,70 @@ for (int j=0; j < NUMBER_OF_TASKS; j++) {
 
 How much easier it will be to find <b><i>WORK_DAYS_PER_WEEK</i></b> than to find all the places where <b><i>5</i></b> was used.
 
+### Add Meaningful Context
+
+
+```java
+private void printGuessStatistics(char candidate, int count) {
+    String number;
+    String verb;
+    String pluralModifier;
+    if (count == 0) {
+        number = "no";
+        verb = "are";
+        pluralModifier = "s";
+    } else if (count == 1) {
+        number = "1";
+        verb = "is";
+        pluralModifier = "";
+    } else {
+        number = Integer.toString(count);
+        verb = "are";
+        pluralModifier = "s";
+    }
+    String guessMessage = String.format(
+    "There %s %s %s%s", verb, number, candidate, pluralModifier);
+    print(guessMessage);
+}
+```
+
+To split the function into smaller pieces we need to create a GuessStatisticsMessage class 
+and make the three variables fields of this class. This provides a clear context for the three variables.
+
+```java
+public class GuessStatisticsMessage {
+    private String number;
+    private String verb;
+    private String pluralModifier;
+    public String make(char candidate, int count) {
+        createPluralDependentMessageParts(count);
+        return String.format("There %s %s %s%s",
+        verb, number, candidate, pluralModifier );
+    }
+
+    private void createPluralDependentMessageParts(int count) {
+        if (count == 0) {
+            thereAreNoLetters();
+        } else if (count == 1) {
+            thereIsOneLetter();
+        } else {
+            thereAreManyLetters(count);
+        }
+    }
+    private void thereAreManyLetters(int count) {
+        number = Integer.toString(count);
+        verb = "are";
+        pluralModifier = "s";
+    }
+    private void thereIsOneLetter() {
+        number = "1";
+        verb = "is";
+        pluralModifier = "";
+    }
+    private void thereAreNoLetters() {
+        number = "no";
+        verb = "are";
+        pluralModifier = "s";
+    }
+}
+```

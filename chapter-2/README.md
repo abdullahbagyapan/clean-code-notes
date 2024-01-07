@@ -79,3 +79,39 @@ if ( O == l )
 else
     l = 01;
 ```
+
+### Make Meaningful Distinctions
+
+Noise words are <b>redundant</b>.
+
+>How is NameString better than 'Name'? Would a name ever be a floating point number?
+
+The word variable should never appear in a variable name.
+
+```java
+public static void copyChars(char a1[], char a2[]) {
+    for (int i = 0; i < a1.length; i++) {
+        a2[i] = a1[i];
+    }
+}
+```
+
+They are noninformative,they provide no clue to the author’s intention.
+This function reads much better when source and destination are used for the argument names.
+
+> Note: There is nothing wrong with using prefix conventions like '<i>a</i>' and '<i>the</i>' so long as they make a meaningful distinction.
+
+The problem comes in when you decide to call a variable '<i>theZork</i>' because you already have another variable named '<i>zork</i>'.
+
+
+>getActiveAccount();
+>getActiveAccounts();
+>getActiveAccountInfo();
+
+How are the programmers in this project supposed to know which of these functions to call?
+
+In the absence of specific conventions,
+- The variable '<i>moneyAmount</i>' is indistinguishable from '<i>money</i>',
+- '<i>customerInfo</i>' is indistinguishable from '<i>customer</i>',
+- '<i>accountData</i>' is indistinguishable from '<i>account</i>',
+- '<i>theMessage</i>' is indistinguishable from '<i>message</i>'. 

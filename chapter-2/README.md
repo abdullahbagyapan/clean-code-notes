@@ -119,3 +119,17 @@ In the absence of specific conventions,
 - '<i>customerInfo</i>' is indistinguishable from '<i>customer</i>',
 - '<i>accountData</i>' is indistinguishable from '<i>account</i>',
 - '<i>theMessage</i>' is indistinguishable from '<i>message</i>'. 
+
+### Use Pronounceable Names
+
+It would be a shame not to take advantage of that huge portion of our brains that has evolved to deal with spoken language.
+
+```java
+class DtaRcrd102 {
+    private Date genymdhms;
+    private Date modymdhms;
+    private final String pszqint = "102";
+};
+```
+
+If you can’t pronounce it, you can’t discuss it without sounding like an idiot.

@@ -12,14 +12,18 @@ It should tell you <b><i>why it exists, what it does, and how it is used</i></b>
 
 If a name requires a comment, then the name <b>does not</b> reveal its intent.
 
->int d; // elapsed time in days
+```java
+int d; // elapsed time in days
+```
 
 We should choose a name that specifies what is being measured and the unit of that measurement:
 
->int elapsedTimeInDays;
->int daysSinceCreation;
->int daysSinceModification;
->int fileAgeInDays;
+```java
+int elapsedTimeInDays;
+int daysSinceCreation;
+int daysSinceModification;
+int fileAgeInDays;
+```
 
 Choosing names that reveal intent can make it much easier to understand and change code.
 What is the purpose of this code? 
@@ -65,8 +69,10 @@ We should avoid words whose entrenched meanings vary from our intended meaning.
 
 Beware of using names which vary in small ways.
 
->XYZControllerForEfficientHandlingOfStrings
->XYZControllerForEfficientStorageOfStrings 
+```
+XYZControllerForEfficientHandlingOfStrings
+XYZControllerForEfficientStorageOfStrings 
+```
 
 The words have frightfully similar shapes.
 
@@ -83,9 +89,6 @@ else
 ### Make Meaningful Distinctions
 
 Noise words are <b>redundant</b>.
-
->How is NameString better than 'Name'? Would a name ever be a floating point number?
-
 The word variable should never appear in a variable name.
 
 ```java
@@ -103,10 +106,11 @@ This function reads much better when source and destination are used for the arg
 
 The problem comes in when you decide to call a variable '<i>theZork</i>' because you already have another variable named '<i>zork</i>'.
 
-
->getActiveAccount();
->getActiveAccounts();
->getActiveAccountInfo();
+```java
+getActiveAccount();
+getActiveAccounts();
+getActiveAccountInfo();
+```
 
 How are the programmers in this project supposed to know which of these functions to call?
 
